@@ -1,0 +1,6 @@
+[DATABASE SETTINGS]
+
+DATABASE_URL 	= localhost
+DATABASE_PORT 	= 8687
+USERNAME	 	= neo4j
+PASSWORD		= password

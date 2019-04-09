@@ -1,0 +1,82 @@
+* {
+	font-size: 1.02em;
+}
+
+
+
+body {
+	background-color: #F0F0F0;
+}
+
+
+
+.bordered {
+	border: 1px solid black;
+}
+
+.no_margin {
+	margin: 0;
+	padding: 0;
+}
+
+
+.query_database_form {
+	margin-top: 20vh;
+}
+
+
+.center {
+	text-align: center;
+}
+
+
+h1 {
+	margin-bottom: 7.5vh;
+	font-weight: bold;
+}
+
+h2 {
+	margin-bottom: 4.5vh;
+	margin-top: 3vh;
+}
+h2.first_h2 {
+	margin-top: 0;
+}
+
+
+
+#iteration_select, #iteration_submit {
+	display: none;
+}
+
+
+#loading, #result {
+	display: none;
+}
+
+
+input[type="text"], input[type="time"], input[type="date"], select {
+	border-radius: 4px;
+}
+
+
+.packages_row {
+	margin-top: 80px;
+}
+
+
+.query_select:hover {
+	cursor: pointer;
+}
+
+.query_select li:hover {
+	background-color: #F3F3F3;
+}
+
+
+
+
+
+
+
+
