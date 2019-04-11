@@ -1,0 +1,1 @@
+- repository module shouldn't be dependent of database module. a New module in model package should handle the upload : take Repository instance, call its query-building methods, and run them.
