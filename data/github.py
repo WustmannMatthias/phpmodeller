@@ -3,6 +3,7 @@
 
 
 import json
+import os
 
 from common.settings import *
 import common.exec as exec
@@ -85,7 +86,7 @@ def clone(data):
     return '\n'.join(log), True
 
 
-def get_modified_files(repository, release_begin, release_end):
+def get_modified_files(repo_name, release_begin, release_end):
     """Returns the list of the files modified between two releases"""
     if os.path.isdir(os.path.join(STORAGE_DIRECTORY, repo_name)):
         os.chdir(os.path.join(STORAGE_DIRECTORY, repo_name))
@@ -93,12 +94,25 @@ def get_modified_files(repository, release_begin, release_end):
         return f"No repository {repo_name} found in the storage directory.", False
 
     modified_files = list()
-    commit_list = exec.exec(['git', 'log', release_begin, release_end, '--oneline'])
-    for item in commit_list_result:
-        commit = item.split(' ')[0]
-        modified_files.append(exec.exec(['git', 'diff-tree', '--no-commit-id', '--name-only', '-r', commit]))
+    commit_list, success = exec.exec(['git', 'log', release_begin + '..' + release_end, '--oneline'])
+    if not success:
+        return "Error while trying to get commit list", False
+    for item in commit_list:
+        commit = item.split(' ')[0].strip()
+        if not commit:
+            continue
+        command = ['git', 'diff-tree', '--no-commit-id', '--name-only', '-r', commit]
+        current_commit_modified_files, success = exec.exec(command)
+        if not success:
+            return f"Error while trying to get modified files in commit {commit}", False
+        modified_files.extend(current_commit_modified_files[:-1])
 
-    return list(set(modified_files)), True
+    #Add repository prefix
+    output = list()
+    for file in list(set(modified_files)):
+        output.append(os.path.join(repo_name, file))
+
+    return output, True
 
 
 def main():

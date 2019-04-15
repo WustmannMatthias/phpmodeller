@@ -97,13 +97,21 @@ def model():
 	abort(400)
 
 # Get features for project
-@api.route('/api/v1.0/features/<repository>', methods=['GET'])
-def get_features(repository):
-	response = make_response(functions.get_features(repository))
+@api.route('/api/v1.0/features/<repository>/<begin>/<end>', methods=['GET'])
+def get_features(repository, begin, end):
+	response = make_response(functions.get_features(repository, begin, end))
 	response.mimetype = get_mime_type('json')
 	return response
 	abort(400)
 
+
+# Get repositories list in db
+@api.route('/api/v1.0/repos', methods=['GET'])
+def get_repos():
+	response = make_response(functions.get_repos())
+	response.mimetype = get_mime_type('json')
+	return response
+	abort(400)
 
 
 
