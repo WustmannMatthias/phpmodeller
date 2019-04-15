@@ -1,0 +1,34 @@
+<div class="row">
+	<h2>New Iteration</h2>
+
+	<form class="col-lg-6 col-lg-offset-2 form-horizontal crawler_caller">
+		<div class="row form-group">
+			<label class="col-lg-6 control-label">Repository</label>
+			<select class="col-lg-6" type="text" name="repository" required="required"></select>
+		</div>
+
+		<div class="row form-group">
+			<label class="col-lg-6 control-label">Tag/Release begin</label>
+			<input class="col-lg-6" type="text" name="release_begin" required="required" />
+		</div>
+
+		<div class="row form-group">
+			<label class="col-lg-6 control-label">Tag/Release end</label>
+			<input class="col-lg-6" type="text" name="release_end" required="required" />
+		</div>
+
+		<br>
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-4 alert alert-info">Make sure to have pulled the project after the last commit of the iteration, otherwises data won't be consistent !</div>
+		</div>
+
+		<div class="row">
+			<button class="btn btn-primary pull-right" name="registerIteration">Register iteration</button>
+		</div>
+	</form>
+</div>
+
+
+<br><br><br>
+<div id="loading" class="center-block"></div>
+<pre id="result" class="center-block"></pre>

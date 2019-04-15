@@ -4,11 +4,13 @@
 
 import json
 
-from model.repository import Repository
+from modeller.repository import Repository
 import common.database as database
+import data.github as github
 
 
 def main():
+
     repo_path = "/var/www/html/Pricer2016Q2"
     #repo_path = "/var/www/html/X"
     #repo_path = "/var/www/html/type_test_repo"
@@ -25,8 +27,18 @@ def main():
         print(json.dumps(result, indent=4))
     driver.close()
 
+    """
 
+    data = {
+        'repository_name': 'e4p-core',
+        'repository_url': 'git@github.com:flash-global/e4p-core.git',
+        'composer': 1
+    }
+    result = github.clone_or_pull(data)
+    print(result)
+    """
 
+    
 if __name__ == '__main__':
     main()
     exit()

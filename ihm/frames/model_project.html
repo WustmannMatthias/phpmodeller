@@ -1,0 +1,64 @@
+
+<h1 class="center">Model project</h1>
+<div class="row">
+
+	<div class="col-lg-6 col-lg-offset-2 form-horizontal crawler_caller">
+		<div class="row form-group">
+			<label class="col-lg-6 control-label">Repository name</label>
+			<input class="col-lg-6" type="text" name="repository" required="required" value="" />
+		</div>
+
+		<div class="row form-group">
+			<label class="col-lg-6 control-label">Github URL</label>
+			<input class="col-lg-6" type="text" name="url" required="required" value="" />
+		</div>
+
+		<div class="row form-group">
+			<label class="col-lg-6 control-label">Composer install</label>
+
+			<label class="col-lg-1 control-label">yes</label>
+			<input class="col-lg-1" type="radio" name="composer" required="required" value="1" />
+
+			<label class="col-lg-1 control-label">no</label>
+			<input class="col-lg-1" type="radio" name="composer" required="required" value="0"/>
+		</div>
+
+		<div class="row form-group">
+			<label class="col-lg-6 control-label">Files to analyse (extensions)</label>
+			<input class="col-lg-6" type="text" name="extensions" required="required" value="" />
+		</div>
+
+		<div class="row form-group">
+			<label class="col-lg-6 control-label">Analyse files without extensions</label>
+
+			<label class="col-lg-1 control-label">yes</label>
+			<input class="col-lg-1" type="radio" name="without_extensions" required="required" value="1" />
+
+			<label class="col-lg-1 control-label">no</label>
+			<input class="col-lg-1" type="radio" name="without_extensions" required="required" value="0" />
+		</div>
+
+		<div class="row form-group">
+			<label class="col-lg-6 control-label">Sub-directories to ignore</label>
+			<input class="col-lg-6" type="text" name="sub_directories" value="" />
+		</div>
+
+		<div class="row form-group">
+			<label class="col-lg-6 control-label">Files to ignore</label>
+			<input class="col-lg-6" type="text" name="files_to_ignore" value="" />
+		</div>
+
+		<div class="row">
+			<button class="btn btn-primary pull-right" id="upload_button">Upload repository</button>
+		</div>
+	</div>
+</div>
+
+
+
+<br><br><br>
+<div id="loading" class="center-block"></div>
+<pre id="result" class="center-block"></pre>
+
+
+<script src="js/model_project.js" type="application/javascript"></script>

@@ -1,3 +1,8 @@
+[GENERAL SETTINGS]
+
+STORAGE_DIRECTORY = /home/wustmann/Bureau/phpmodeller_storage
+
+
 [DATABASE SETTINGS]
 
 DATABASE_URL 	= localhost
@@ -5,3 +10,11 @@ DATABASE_PORT 	= 7687
 USERNAME	 	= neo4j
 PASSWORD		= password
 PROTOCOL		= bolt
+
+
+[API SETTINGS]
+
+API_URL = localhost
+API_PORT = 5001
+DEBUG = TRUE
+
